@@ -4,8 +4,14 @@ const mongoose = require("mongoose");
 const path = require('path');
 const socketIo = require("socket.io");
 const config = require('./config');
-const hostname = "127.0.0.1";
-const port = 3000;
+
+
+// const hostname = "127.0.0.1";
+// const port = 3000;
+const hostname = "0.0.0.0";                     // CHATGPT DISSE PRA METER ASSIM PARA O RENDER PODER FUNCIONAR
+const port = Number(process.env.PORT || 3000);  // CHATGPT DISSE PRA METER ASSIM PARA O RENDER PODER FUNCIONAR
+
+
 let router = require('./router');
 var app = express();
 
