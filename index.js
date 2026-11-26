@@ -36,6 +36,7 @@ io.on("connection", (socket) => {
   });
 });
 
+app.get('/health', (req, res) => res.json({ ok: true }));
 app.use(router.init(io));
 app.use('/images', express.static(path.join(__dirname, 'images')))
 
